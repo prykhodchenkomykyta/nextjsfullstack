@@ -1,4 +1,5 @@
-import { useSession } from "next-auth/react";
+"use client";
+import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -19,7 +20,7 @@ const LoginPage = () => {
           <p>Log into your account or create a new one using social buttons</p>
           <button
             className="flex gap-4 p-4 ring-1 ring-orange-100 rounded-md"
-            onClick={signIn("google")}
+            onClick={() => signIn("google")}
           >
             <Image
               src="/google.png"
